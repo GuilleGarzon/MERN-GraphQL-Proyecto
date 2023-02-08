@@ -8,6 +8,8 @@ export async function startApoloServer(typeDefs, resolvers) {
   const app = express();
   const httpServer = http.createServer(app);
 
+  app.get('/', (req, res) => res.send('Welcome to my GraphQL API'));
+
   const server = new ApolloServer({
     typeDefs,
     resolvers,
